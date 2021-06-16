@@ -9,7 +9,7 @@ namespace StudentManagment.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IStudentRepository _studentRepository;
+        public readonly IStudentRepository _studentRepository;
 
         public HomeController(IStudentRepository studentRepository)
         {
@@ -19,6 +19,13 @@ namespace StudentManagment.Controllers
         public string Index()
         {
             return _studentRepository.GetStudent(1).EmailAddress;
+        }
+
+        public ActionResult Details()
+        {
+            Student model = _studentRepository.GetStudent(1);
+
+            return View(model);
         }
     }
 }
