@@ -16,16 +16,16 @@ namespace StudentManagment.Controllers
             _studentRepository = studentRepository;
         }
 
-        public string Index()
-        {
-            return _studentRepository.GetStudent(1).EmailAddress;
-        }
+        //public string Index()
+        //{
+        //    return _studentRepository.GetStudent(1).EmailAddress;
+        //}
 
         public ActionResult Details()
         {
             Student model = _studentRepository.GetStudent(1);
 
-            return View(model);
+            return View("details");
         }
     }
 }
