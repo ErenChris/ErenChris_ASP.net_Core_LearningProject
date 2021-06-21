@@ -21,11 +21,11 @@ namespace StudentManagment.Controllers
         //    return _studentRepository.GetStudent(1).EmailAddress;
         //}
 
-        public ActionResult Details()
+        public ActionResult details()
         {
             Student model = _studentRepository.GetStudent(1);
 
-            return View("details");
+            return View("more");
         }
     }
 }
